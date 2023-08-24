@@ -10,6 +10,10 @@
         {
             "name": "Jack Wall",
             "email": "jw@jack.gd"
+        },
+        {
+            "name": "Ivan Slyusar",
+            "email": "xvanok@gmail.com"
         }
     ],
     "require": {
@@ -22,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "J4k\\OAuth2\\Client\\Provider\\": "src"
+            "illuminati0n\\OAuth2\\Client\\Provider\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "J4k\\OAuth2\\Client\\Test\\Provider\\": "tests/"
+            "illuminati0n\\OAuth2\\Client\\Test\\Provider\\": "tests/"
         }
     }
 }
