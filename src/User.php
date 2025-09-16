@@ -5,7 +5,7 @@ namespace illuminati0n\OAuth2\Client\Provider;
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 
 /**
- * @see     https://vk.com/dev/fields
+ * @see     https://vk.ru/dev/fields
  *
  * @package illuminati0n\OAuth2\Client\Provider
  */

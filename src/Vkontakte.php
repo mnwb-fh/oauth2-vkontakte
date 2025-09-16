@@ -9,14 +9,14 @@ use Psr\Http\Message\ResponseInterface;
 
 class Vkontakte extends AbstractProvider
 {
-    protected $baseOAuthUri = 'https://oauth.vk.com';
-    protected $baseUri      = 'https://api.vk.com/method';
+    protected $baseOAuthUri = 'https://oauth.vk.ru';
+    protected $baseUri      = 'https://api.vk.ru/method';
     protected $version      = '5.130';
     protected $language     = null;
 
     /**
      * @type array
-     * @see https://vk.com/dev/permissions
+     * @see https://vk.ru/dev/permissions
      */
     public $scopes = [
         'email',
@@ -41,7 +41,7 @@ class Vkontakte extends AbstractProvider
     ];
     /**
      * @type array
-     * @see https://new.vk.com/dev/fields
+     * @see https://new.vk.ru/dev/fields
      */
     public $userFields = [
         'bdate',
@@ -194,7 +194,7 @@ class Vkontakte extends AbstractProvider
     }
 
     /**
-     * @see https://vk.com/dev/users.get
+     * @see https://vk.ru/dev/users.get
      *
      * @param integer[]        $ids
      * @param AccessToken|null $token Current user if empty
@@ -228,7 +228,7 @@ class Vkontakte extends AbstractProvider
         return array_map($array2user, $users);
     }
     /**
-     * @see https://vk.com/dev/friends.get
+     * @see https://vk.ru/dev/friends.get
      *
      * @param integer          $userId
      * @param AccessToken|null $token
