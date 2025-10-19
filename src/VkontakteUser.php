@@ -2,10 +2,6 @@
 
 namespace mnwb\OAuth2\Client\Provider;
 
-<?php
-
-namespace illuminati0n\OAuth2\Client\Provider;
-
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 
 /**
