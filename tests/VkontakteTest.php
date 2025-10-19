@@ -1,6 +1,6 @@
 <?php
 
-namespace illuminati0n\OAuth2\Client\Test\Provider;
+namespace mnwb\OAuth2\Client\Test\Provider;
 
 use GuzzleHttp\Psr7\Response;
 use illuminati0n\OAuth2\Client\Provider\Vkontakte as Provider;
@@ -99,66 +99,6 @@ class VkontakteTest extends \PHPUnit_Framework_TestCase
                     'photo_max_orig' => 'http::/example.com/mock/image/url.jpg?with=parameters&and=max',
                     'screen_name'    => 'mock_screen_name',
                     'sex'            => 2,
-                ],
-            ],
-        ]);
-    }
-    /**
-     * @return string JSON
-     */
-    protected function getMockUsers()
-    {
-        return json_encode([
-            'response' => [
-                [
-                    'uid'            => 12345,
-                    'bdate'          => '12.07.1980',
-                    'city'           => [
-                        'id'    => 42,
-                        'title' => 'mock_city_title',
-                    ],
-                    'country'        => [
-                        'id'    => 421,
-                        'title' => 'UK',
-                    ],
-                    'domain'         => 'id12345',
-                    'first_name'     => 'mock_first_name',
-                    'friend_status'  => 3,
-                    'has_photo'      => 1,
-                    'home_town'      => 'mock_home_town',
-                    'is_friend'      => 1,
-                    'last_name'      => 'mock_last_name',
-                    'maiden_name'    => 'mock_maiden_name',
-                    'nickname'       => 'mock_nickname',
-                    'photo_max'      => 'http::/example.com/mock/image/url.jpg?with=parameters&and=square',
-                    'photo_max_orig' => 'http::/example.com/mock/image/url.jpg?with=parameters&and=max',
-                    'screen_name'    => 'mock_screen_name',
-                    'sex'            => 2,
-                ],
-                [
-                    'uid'            => 23456,
-                    'bdate'          => '12.07.1988',
-                    'city'           => [
-                        'id'    => 422,
-                        'title' => 'mock_city_title_2',
-                    ],
-                    'country'        => [
-                        'id'    => 4212,
-                        'title' => 'UK',
-                    ],
-                    'domain'         => 'id23456',
-                    'first_name'     => 'mock_first_name_2',
-                    'friend_status'  => 0,
-                    'has_photo'      => 1,
-                    'home_town'      => 'mock_home_town_2',
-                    'is_friend'      => 0,
-                    'last_name'      => 'mock_last_name_2',
-                    'maiden_name'    => 'mock_maiden_name_2',
-                    'nickname'       => 'mock_nickname_2',
-                    'photo_max'      => 'http::/example.com/mock/image/url2.jpg?with=parameters&and=square',
-                    'photo_max_orig' => 'http::/example.com/mock/image/url2.jpg?with=parameters&and=max',
-                    'screen_name'    => 'mock_screen_name_2',
-                    'sex'            => 1,
                 ],
             ],
         ]);
