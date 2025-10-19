@@ -1,5 +1,5 @@
 {
-    "name": "illuminati0n/oauth2-vkontakte",
+    "name": "mnwb/oauth2-vkontakte",
     "description": "Vkontakte provider for league/oauth2-client",
     "keywords": [
         "league",
@@ -17,8 +17,8 @@
         }
     ],
     "require": {
-        "php" : ">=5.6",
-        "league/oauth2-client": "^2.0"
+        "php" : ">=8.0",
+        "league/oauth2-client": "^2.3"
     },
     "require-dev": {
         "phpunit/phpunit" : "~4.6",
@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "illuminati0n\\OAuth2\\Client\\Provider\\": "src"
+            "mnwb\\OAuth2\\Client\\Provider\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "illuminati0n\\OAuth2\\Client\\Test\\Provider\\": "tests/"
+            "mnwb\\OAuth2\\Client\\Test\\Provider\\": "tests/"
         }
     }
 }
