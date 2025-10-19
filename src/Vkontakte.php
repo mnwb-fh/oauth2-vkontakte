@@ -1,6 +1,6 @@
 <?php
 
-namespace illuminati0n\OAuth2\Client\Provider;
+namespace mnwb\OAuth2\Client\Provider;
 
 use League\OAuth2\Client\Provider\AbstractProvider;
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
@@ -190,75 +190,6 @@ class Vkontakte extends AbstractProvider
             $response['id'] = $additional['user_id'];
         }
 
-        return new User($response, $response['id']);
-    }
-
-    /**
-     * @see https://vk.ru/dev/users.get
-     *
-     * @param integer[]        $ids
-     * @param AccessToken|null $token Current user if empty
-     * @param array            $params
-     *
-     * @return User[]
-     */
-    public function usersGet(array $ids = [], AccessToken $token = null, array $params = [])
-    {
-        if (empty($ids) && !$token) {
-            throw new \InvalidArgumentException('Some of parameters usersIds OR access_token are required');
-        }
-
-        $default = [
-            'user_ids'     => implode(',', $ids),
-            'fields'       => $this->userFields,
-            'access_token' => $token ? $token->getToken() : null,
-            'v'            => $this->version,
-            'lang'         => $this->language
-        ];
-        $params  = array_merge($default, $params);
-        $query   = $this->buildQueryString($params);
-        $url     = "$this->baseUri/users.get?$query";
-
-        $response   = $this->getResponse($this->createRequest(static::METHOD_GET, $url, $token, []))['response'];
-        $users      = !empty($response['items']) ? $response['items'] : $response;
-        $array2user = function ($userData) {
-            return new User($userData);
-        };
-
-        return array_map($array2user, $users);
-    }
-    /**
-     * @see https://vk.ru/dev/friends.get
-     *
-     * @param integer          $userId
-     * @param AccessToken|null $token
-     * @param array            $params
-     *
-     * @return User[]
-     */
-    public function friendsGet($userId, AccessToken $token = null, array $params = [])
-    {
-        $default = [
-            'user_id'      => $userId,
-            'fields'       => $this->userFields,
-            'access_token' => $token ? $token->getToken() : null,
-            'v'            => $this->version,
-            'lang'         => $this->language
-        ];
-        $params  = array_merge($default, $params);
-        $query   = $this->buildQueryString($params);
-        $url     = "$this->baseUri/friends.get?$query";
-
-        $response     = $this->getResponse($this->createRequest(static::METHOD_GET, $url, $token, []))['response'];
-        $friends      = !empty($response['items']) ? $response['items'] : $response;
-        $array2friend = function ($friendData) {
-            if (is_numeric($friendData)) {
-                $friendData = ['id' => $friendData];
-            }
-
-            return new User($friendData);
-        };
-
-        return array_map($array2friend, $friends);
+        return new VkontakteUser($response, $response['id']);
     }
 }
