@@ -55,7 +55,16 @@ class VkontakteUser implements ResourceOwnerInterface
      */
     public function getLocale(): ?string
     {
-        return $this->getResponseValue('city')['title'].(($this->getResponseValue('city')['title'] && $this->getResponseValue('country')['title']) ? ', ' : '').$this->getResponseValue('country')['title'];
+        $locale = '';
+        if (!empty($this->getResponseValue('city')['title']))
+            $locale = $this->getResponseValue('city')['title'];
+        if (!empty($this->getResponseValue('country')['title']))
+            {
+            if ($locale)
+                $locale .= ", ";
+            $locale .= $this->getResponseValue('country')['title'];
+            }
+        return $locale;
     }
 
     /**
